@@ -1,19 +1,18 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 
-{% block title %}Create{% endblock title %}
+{% block title %}Item Create{% endblock title %}
 
 {% block content %}
-    
 <br>
 <div class="card">
-  <h5 class="card-header">Create Item</h5>
+  <h5 class="card-header">Item Create:</h5>
   <div class="card-body">
     <p class="card-text">
-        <form action="{% url 'item-create' restaurant_obj.id %}" method="POST">
+        <form action="{% url 'item-create' restaurant.id %}" method="POST">
             {% csrf_token %}
             {{form|crispy}}
-            <input type="submit" value="Create Item" class="btn btn-outline-success">
+            <input type="submit" value="Update" class="btn btn-outline-primary">
         </form>
     </p>
   </div>
